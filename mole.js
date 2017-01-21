@@ -37,9 +37,9 @@ function startGame() {
 	scoreBoard.textContent = 0;
 	timeUp = false;
 	score = 0;
-	peep();
 	setTimeout(() => timeUp = true, 10000);
 	countDown(10);
+	setTimeout(peep, 1000);
 }
 
 function countDown(i, callback) {
@@ -61,6 +61,5 @@ moles.forEach(mole => mole.addEventListener('click', bonk));
 
 //future features
 
-// countdown timer
 // styled button
 // facebook auth users + db + all time high score lists
