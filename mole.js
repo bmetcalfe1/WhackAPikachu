@@ -1,6 +1,7 @@
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
+const timerDisplay = document.querySelector('.display-time-left');
 
 let lastHole;
 let timeUp = false;
@@ -38,6 +39,15 @@ function startGame() {
 	score = 0;
 	peep();
 	setTimeout(() => timeUp = true, 10000);
+	countDown(10);
+}
+
+function countDown(i, callback) {
+    callback = callback || function(){};
+    var int = setInterval(function() {
+        timerDisplay.textContent = "Time Remaining: " + i;
+        i-- || (clearInterval(int), callback());
+    }, 1000);
 }
 
 function bonk(e) {
@@ -53,5 +63,4 @@ moles.forEach(mole => mole.addEventListener('click', bonk));
 
 // countdown timer
 // styled button
-// choose what to bonk (ie mole, diglet, etc)
 // facebook auth users + db + all time high score lists
