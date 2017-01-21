@@ -60,6 +60,4 @@ function bonk(e) {
 moles.forEach(mole => mole.addEventListener('click', bonk));
 
 //future features
-
-// styled button
 // facebook auth users + db + all time high score lists
