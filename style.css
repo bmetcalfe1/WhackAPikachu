@@ -26,6 +26,10 @@ h1 {
   justify-content: center;
 }
 
+/*.display {
+  visibility: hidden;
+}*/
+
 .display-time-left {
   font-weight: 100;
   font-size: 5rem;
